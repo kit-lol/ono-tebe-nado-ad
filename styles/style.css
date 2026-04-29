@@ -1,31 +1,24 @@
-/* styles/style.css */
-
-/* Общие стили */
-body {
-  font-family: 'Raleway', Arial, sans-serif;
-  min-width: 1100px;
-  margin: 0;
-  padding: 0;
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 183px;
 }
 
-/* Шапка */
+.content-section {
+  width: 100%;
+  margin: 0 auto;
+}
+
 .header {
   display: grid;
-  grid-template-columns: 1fr min-content 1fr;
+  grid-template-columns: 1.51fr 2fr 1.5fr;
   align-items: center;
-  padding: 92px 50px;
-}
-
-.header__menu {
-  justify-self: start;
+  padding: 92px 51px 89px;
 }
 
 .header__links-list {
   display: flex;
   gap: 32px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 .header__links-list-item {
@@ -38,9 +31,12 @@ body {
 
 .header__link {
   font-size: 18px;
-  text-underline-offset: 4px;
-  color: #000;
-  text-decoration: none;
+  white-space: nowrap;
+}
+
+.text-link:hover {
+  background-color: #000000;
+  color: #FFF;
 }
 
 .header__link_active {
@@ -49,57 +45,67 @@ body {
 
 .header__logo {
   display: block;
-  width: 148px;
-  height: 105px;
+  justify-self: center;
+  align-self: center;
+  width: 140px;
 }
 
 .header__logo-image {
   width: 100%;
-  height: 100%;
+}
+
+.address {
+  font-style: inherit;
 }
 
 .header__address {
   justify-self: end;
-  max-width: 240px;
+  font-style: inherit;
+}
+
+.address__item {
+  display: block;
   font-size: 18px;
   line-height: 1.35;
-  font-style: normal;
+  text-underline-position: under;
 }
 
-.header__address a {
-  text-underline-offset: 4px;
-  color: #000;
+.address__address-text {
+  font-size: 18px;
+  line-height: 1.35;
 }
 
-/* Обложка */
 .cover {
   position: relative;
-  padding: 165px 50px 50px;
+  padding: 165px 50px 50px 50px;
   background-image: url(../images/cover.jpg);
+  background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
 }
 
 .overlay {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 1;
+  opacity: 0.6000000238418579;
+  background-color: #000000;
 }
 
 .cover__title {
   position: relative;
-  z-index: 2;
-  color: #fff;
-  font-weight: 700;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #FFF;
+  font-weight: bold;
   font-size: 100px;
   line-height: 1.15;
-  letter-spacing: 0.3em;
+  letter-spacing: 30px;
   text-transform: uppercase;
-  margin: 0 0 100px 0; /* Уменьшен отступ снизу */
 }
 
 .aligned-text {
@@ -107,84 +113,86 @@ body {
 }
 
 .aligned-text_center {
+  line-height: 1;
   text-align: center;
-  margin: 10px 0; /* Уменьшен вертикальный отступ */
 }
 
 .aligned-text_right {
+  line-height: 1;
   text-align: right;
 }
 
 .letter-spacing-extended {
-  letter-spacing: 0.6em;
+  letter-spacing: 60px;
 }
 
-.no-letter-spacing {
-  letter-spacing: 0;
+
+.remove-spacing {
+  letter-spacing: normal;
 }
 
 .cover__description {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
   gap: 78px;
+  padding: 136px 0 0;
 }
 
 .cover__description-text {
-  color: #fff;
+  color: #FFF;
   font-size: 22px;
   line-height: 1.27;
   text-transform: uppercase;
   word-spacing: 18px;
-  margin: 0;
 }
 
 .bet-button {
-  border: 1px solid #fff;
-  padding: 12px 32px;
-  background: transparent;
-  color: #fff;
+  border: 1px #FFF solid;
+  padding: 14px 32px;
+  color: #FFF;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
   font-size: 22px;
+  line-height: 1;
   text-transform: uppercase;
+  background-color: transparent;
   cursor: pointer;
 }
 
 .bet-button:hover {
-  color: #ffffff9a;
-  transition: 500ms;
+  color: #000000;
+  background-color: #FFF;
 }
 
-/* Секция с лотами */
 .lots {
-  padding: 180px 50px;
+  padding: 0 50px;
 }
 
 .lots__heading {
+  padding: 0 0 30px 40px;
+  font-weight: bold;
   font-size: 40px;
+  line-height: 1;
   text-transform: uppercase;
-  margin: 0 0 27px 40px;
 }
 
 .lots__card-list {
-  display: flex;
-  gap: 25px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 25px;
   list-style: none;
-  margin: 0 0 30px;
-  padding: 0;
 }
 
-.lots__card-list-item {
-  width: 430px; /* Фиксированная ширина */
-  min-height: 692px;
-  flex: none; /* Убрано flex: 1 чтобы карточки не растягивались */
+.lost__card-list-item {
+  height: 100%;
 }
 
 .card-link {
   display: block;
   height: 100%;
-  text-decoration: none;
 }
 
 .card {
@@ -192,62 +200,71 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 30px;
+  width: auto;
   height: 100%;
   padding: 50px 40px;
-  color: #fff;
 }
 
 .card_type_film {
   background-image: url(../images/card-lot-01.jpg);
+  background-repeat: no-repeat;
   background-size: cover;
 }
 
 .card_type_book {
   background-image: url(../images/card-lot-02.jpg);
+  background-repeat: no-repeat;
   background-size: cover;
 }
 
 .card_type_picture {
   background-image: url(../images/card-lot-03.jpg);
+  background-repeat: no-repeat;
   background-size: cover;
 }
 
 .card__title {
   position: relative;
-  z-index: 2;
+  z-index: 1;
+  color: #FFF;
+  font-weight: bold;
   font-size: 22px;
   line-height: 1.2;
-  text-decoration: underline;
+  text-decoration-line: underline;
   text-transform: uppercase;
-  margin: 0;
 }
 
 .card__text {
   position: relative;
-  z-index: 2;
+  z-index: 1;
+  color: #FFF;
   font-size: 20px;
-  line-height: 1.8;
-  margin: 0;
+  line-height: 1.2;
 }
 
 .lots__look-more-link {
+  display: block;
+  margin: 30px 0 0 40px;
   font-size: 20px;
-  text-underline-offset: 5px;
-  margin-left: 40px;
-  color: #000;
+  text-decoration-line: underline;
+  text-underline-position: under;
+  width: fit-content;
 }
 
-/* Секция "Об аукционе" */
 .about {
   display: grid;
-  grid-template-columns: 430px 1fr;
-  gap: 25px;
-  padding: 0 50px 180px;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 24px;
+  padding: 0 50px;
 }
 
 .about__column {
-  display: flex;
-  flex-direction: column;
+  justify-self: center;
+}
+
+.about__column_text {
+  grid-column: 2/4;
 }
 
 .about__logo {
@@ -256,75 +273,53 @@ body {
   align-items: center;
   width: 240px;
   height: 240px;
-  background-color: #000;
   border-radius: 50%;
-  margin: 0 auto;
+  background-color: #000000;
 }
 
 .about__logo-image {
   width: 148px;
-  height: 114px;
 }
 
 .about__title {
+  padding: 100px 0 104px;
+  font-weight: bold;
   font-size: 40px;
+  line-height: 1;
   text-transform: uppercase;
-  margin: 100px 0;
 }
 
 .about__text {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.about__text p {
   font-size: 20px;
-  line-height: 1.2;
-  font-weight: 100;
+  line-height: normal;
 }
 
-.about__text p:first-child {
-  margin-bottom: 25px;
-}
-
-.about__text p:last-child {
-  margin-bottom: 0;
-}
-
-/* Подвал */
 .footer {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  padding: 180px 50px 90px;
+  display: flex;
+  justify-content: space-between;
+  padding: 180px 50px 80px;
 }
 
-.footer .address {
-  justify-self: start;
-  font-size: 18px;
-  line-height: 1.35;
-  font-style: normal;
-}
-
-.footer .address a {
-  text-underline-offset: 4px;
-  color: #000;
-}
-
-.footer__menu {
-  justify-self: center;
+.footer__social-icon {
+  width: auto;
+  height: 48px;
 }
 
 .footer__menu-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
   text-align: center;
-}
-
-.footer__menu-list-item {
-  margin-bottom: 5px;
+  list-style: none;
 }
 
 .footer__menu-link {
   font-size: 18px;
-  text-underline-offset: 4px;
-  color: #000;
-  text-decoration: none;
+  line-height: normal;
+  text-underline-position: under;
 }
 
 .footer__menu-link_active {
@@ -335,31 +330,4 @@ body {
   display: flex;
   gap: 48px;
   list-style: none;
-  margin: 0;
-  padding: 0;
-  justify-self: end;
-}
-
-.footer__social-list-item {
-  width: 48px;
-  height: 48px;
-}
-
-.footer__social-link {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.footer__social-icon {
-  width: 110%;
-  height: 100%;
-}
-
-.footer-line {
-    text-decoration: underline;
-}
-
-.header-line {
-    text-decoration: underline;
 }
