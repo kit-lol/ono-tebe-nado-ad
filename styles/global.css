@@ -1,20 +1,13 @@
-/* styles/global.css */
-/* Сброс стилей и базовые настройки */
-
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-html {
-  margin: 0;
-  padding: 0;
-}
-
 body {
   min-width: 1100px;
   margin: 0;
+  padding: 0;
   font-family: Raleway, sans-serif;
 }
 
@@ -39,13 +32,4 @@ a {
 
 img {
   width: 100%;
-}
-
-address {
-  font-style: normal;
-}
-
-button {
-  font-family: inherit;
-  cursor: pointer;
 }
